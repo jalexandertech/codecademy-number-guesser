@@ -19,14 +19,11 @@ const compareGuesses = (currentHumanGuess, computerGuess, target) => {
     if (Math.abs(currentHumanGuess - target) < Math.abs(computerGuess - target)) {
         return true;
     }
-    else if (currentHumanGuess === target){
+    else if (currentHumanGuess === target && computerGuess === target){
         return true;
     }
-    else if (currentHumanGuess === compareGuess){
+    else if (Math.abs(currentHumanGuess - target) === Math.abs(computerGuess - target)) {
         return true;
-    }
-    else if (computerGuess === target){
-        return false;
     }
     else{
         return false;
@@ -36,12 +33,20 @@ const compareGuesses = (currentHumanGuess, computerGuess, target) => {
 
 // This function will be used to correctly increase the winner’s score after each round.
 const updateScore = winner =>{
-    if (winner === 'human'){
-        humanScore += 1;
-    }
-    else{
-        computerScore += 1;
-    }
+    switch(true) {
+        case (winner === 'human'):
+            humanScore += 1;
+            break;
+        case (winner === 'computer'):
+            computerScore += 1;
+            break;
+}
+    // if (winner === 'human'){
+    //     humanScore += 1;
+    // }
+    // else if (winner === 'computer'){
+    //     computerScore += 1;
+    // }
 };
     
 
