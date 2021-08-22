@@ -41,13 +41,9 @@ const updateScore = winner =>{
             computerScore += 1;
             break;
 }
-    // if (winner === 'human'){
-    //     humanScore += 1;
-    // }
-    // else if (winner === 'computer'){
-    //     computerScore += 1;
-    // }
 };
     
-
-
+// This function will be used to update the round number after each round.
+const advanceRound = () => {
+    currentRoundNumber += 1;
+};
